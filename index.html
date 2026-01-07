@@ -73,8 +73,21 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title" style="font-size: 2.4rem; line-height: 1.2;">
-            <img src="./static/icon.png" alt="ROMA Icon" style="vertical-align: middle; width: 1.2em; margin-right: 10px; margin-bottom: 8px;">
-            ROMA: Real-time Omni-Multimodal Assistant<br>with Interactive Streaming Understanding
+            <span style="position: relative; display: inline-block;">
+              <img src="./static/icon.png" 
+                   alt="ROMA Icon" 
+                   style="
+                     position: absolute; 
+                     right: 100%;       /* 放在文字容器的最左侧外 */
+                     top: 50%;          /* 垂直居中 */
+                     transform: translateY(-50%); 
+                     width: 1.2em; 
+                     margin-right: 15px; /* Logo 和文字的间距 */
+                   ">
+              ROMA: Real-time Omni-Multimodal Assistant
+            </span>
+            <br>
+            with Interactive Streaming Understanding
           </h1>
           
           <div class="is-size-5 publication-authors">
@@ -171,7 +184,7 @@
         <h2 class="title is-3 has-text-centered">Methodology</h2>
         <div class="content has-text-justified">
           <p>
-            ROMA unifies reactive answering and proactive timing over continuous inputs. The framework processes streaming signals as synchronized <strong>multimodal units</strong>, utilizing Chunked Time-aligned Multimodal ROPE (TMRoPE) for precise cross-modal alignment. By integrating a dedicated <strong>Speak Head</strong>, the model achieves robust temporal grounding and autonomous interaction control.
+            ROMA unifies reactive answering and proactive timing over continuous inputs. The framework processes streaming signals as synchronized <strong>multimodal units</strong>, utilizing Chunked Time-aligned Multimodal RoPE (TMRoPE) for precise cross-modal alignment. By integrating a dedicated <strong>Speak Head</strong>, the model achieves robust temporal grounding and autonomous interaction control.
           </p>
 
           <div class="has-text-centered" style="margin: 2rem 0;">
@@ -284,7 +297,7 @@
     <h3 class="title is-4 results-subtitle">Proactive Tasks: Real-Time Narration</h3>
     <div class="columns is-centered">
       <div class="column is-10 has-text-centered">
-        <img src="./static/narration.png" alt="Narration Table" class="result-image" style="width: 50%;">
+        <img src="./static/narration.png" alt="Narration Table" class="result-image" style="width: 75%;">
         <p class="table-caption"><strong>Table: Streaming Narration on YouCook2 & OVO-Bench (SSR).</strong></p>
       </div>
     </div>
