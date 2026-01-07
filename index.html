@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ROMA: Real-time Omni-Multimodal Assistant with Interactive Streaming Understanding">
+  <meta name="keywords" content="ROMA, Omni-multimodal, Streaming, VideoLLM, ACL">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROMA: Real-time Omni-Multimodal Assistant</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* 自定义样式 */
+    body { font-family: 'Noto Sans', sans-serif; }
+    .title.is-1 { font-family: 'Google Sans', sans-serif; }
+    .publication-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+    .publication-authors { font-size: 1.2rem; color: #4a4a4a; margin-bottom: 1.5rem; }
+    .publication-links { display: flex; justify-content: center; gap: 10px; margin-top: 1rem; flex-wrap: wrap; }
+    .abstract-text { font-size: 1.1rem; line-height: 1.6; text-align: justify; }
+    .section-title { margin-top: 3rem; margin-bottom: 1.5rem; }
+    .hero-body { padding-bottom: 1rem; }
+    .teaser-caption { font-size: 0.9rem; color: #666; margin-top: 0.5rem; }
+    .bibtex-box { background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: monospace; font-size: 0.9rem; }
+    
+    /* 视频容器样式 - 保持 16:9 比例 */
+    .publication-video {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    .publication-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ROMA: Real-time Omni-Multimodal Assistant<br>with Interactive Streaming Understanding</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <strong>Anonymous Authors</strong><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+             <span class="author-block"><sup>1</sup>ACL Submission</span>
+          </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="#" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            
+            <span class="link-block">
+              <a class="external-link button is-normal is-rounded is-light" style="pointer-events: none; opacity: 0.6;">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code (Coming Soon)</span>
+              </a>
+            </span>
+
+            <span class="link-block">
+              <a class="external-link button is-normal is-rounded is-light" style="pointer-events: none; opacity: 0.6;">
+                <span class="icon"><i class="far fa-images"></i></span>
+                <span>Dataset (Coming Soon)</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <img src="./static/images/teaser.png" alt="ROMA Streaming Capabilities" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h2 class="subtitle has-text-justified teaser-caption">
+          <strong>Figure 1: ROMA's streaming understanding capabilities.</strong> 
+          It supports proactive tasks, including event alerts and narration, alongside reactive question answering.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified abstract-text">
+          <p>
+            Recent Omni-multimodal Large Language Models show promise in unified audio, vision, and text modeling. However, streaming audio-video understanding remains challenging, as existing approaches suffer from disjointed capabilities: they typically exhibit incomplete modality support or lack autonomous proactive monitoring.
+          </p>
+          <p>
+            To address this, we present <strong>ROMA</strong>, a real-time omni-multimodal assistant for unified reactive and proactive interaction. ROMA processes continuous inputs as synchronized multimodal units, aligning dense audio with discrete video frames to handle granularity mismatches. For online decision-making, we introduce a lightweight <strong>speak head</strong> that decouples response initiation from generation to ensure precise triggering without task conflict.
+          </p>
+          <p>
+            Extensive experiments across 12 benchmarks demonstrate ROMA achieves state-of-the-art performance on proactive tasks while remaining competitive in reactive settings, validating its robustness in unified real-time omni-multimodal understanding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Demo Video</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <p class="content">
+          Watch the real-time recording of our Gradio demo showcasing ROMA's capabilities.
+        </p>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Methodology</h2>
+        <div class="content has-text-justified">
+          <p>
+            ROMA unifies reactive answering and proactive timing over continuous inputs. The architecture utilizes chunked <strong>Time-aligned Multimodal ROPE (TMROPE)</strong> and a dedicated <strong>Speak Head</strong> for alignment and timing control.
+          </p>
+          <div class="has-text-centered" style="margin: 2rem 0;">
+            <img src="./static/images/architecture.png" alt="ROMA Architecture" style="width: 90%;">
+          </div>
+          <p>
+            <strong>Key Innovations:</strong>
+          </p>
+          <ul>
+            <li><strong>Multimodal Units:</strong> We segment continuous audio into one-second intervals synchronized with video frames.</li>
+            <li><strong>Speak Head:</strong> A lightweight module parallel to the LM head that explicitly predicts response timing (binary decision).</li>
+            <li><strong>Two-Stage Training:</strong> A curriculum that first adapts the model to streaming formats and then optimizes for proactive responsiveness.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">Real-Time Narration</h3>
+          <p>
+            Compared with baseline VideoLLMs, ROMA provides more succinct and time-aligned summaries of events without accessing future context.
+          </p>
+          <img src="./static/images/narration.png" alt="Narration Results" style="width: 100%; border: 1px solid #ddd;">
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column">
+         <div class="content">
+          <h3 class="title is-4">ROMA Streaming Dataset</h3>
+          <p>
+            We constructed a comprehensive streaming dataset covering Proactive (Alert, Narration) and Reactive (QA) tasks, totaling over 676K samples.
+          </p>
+          <img src="./static/images/dataset.png" alt="Dataset Statistics" style="width: 100%; border: 1px solid #ddd;">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="bibtex-box"><code>@article{roma2025,
+  title={ROMA: Real-time Omni-Multimodal Assistant with Interactive Streaming Understanding},
+  author={Anonymous Authors},
+  journal={ACL Submission},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        Template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
