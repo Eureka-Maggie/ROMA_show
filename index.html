@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
-    /* 自定义样式 */
     body { font-family: 'Noto Sans', sans-serif; }
     .title.is-1 { font-family: 'Google Sans', sans-serif; }
     .publication-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
@@ -25,10 +24,10 @@
     .teaser-caption { font-size: 0.9rem; color: #666; margin-top: 0.5rem; }
     .bibtex-box { background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: monospace; font-size: 0.9rem; }
     
-    /* 视频容器样式 - 保持 16:9 比例 */
+    /* 视频容器样式 - 16:9 */
     .publication-video {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       max-width: 100%;
@@ -43,6 +42,13 @@
       width: 100%;
       height: 100%;
     }
+
+    /* 图片通用样式：圆角+阴影 */
+    .result-image {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -55,9 +61,7 @@
           <h1 class="title is-1 publication-title">ROMA: Real-time Omni-Multimodal Assistant<br>with Interactive Streaming Understanding</h1>
           
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <strong>Anonymous Authors</strong><sup>1</sup>
-            </span>
+            <span class="author-block"><strong>Anonymous Authors</strong><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -71,14 +75,12 @@
                 <span>Paper</span>
               </a>
             </span>
-            
             <span class="link-block">
               <a class="external-link button is-normal is-rounded is-light" style="pointer-events: none; opacity: 0.6;">
                 <span class="icon"><i class="fab fa-github"></i></span>
                 <span>Code (Coming Soon)</span>
               </a>
             </span>
-
             <span class="link-block">
               <a class="external-link button is-normal is-rounded is-light" style="pointer-events: none; opacity: 0.6;">
                 <span class="icon"><i class="far fa-images"></i></span>
@@ -92,14 +94,18 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding-top: 0;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <img src="./static/images/teaser.png" alt="ROMA Streaming Capabilities" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <img src="./static/images/teaser.png" 
+             alt="ROMA Streaming Capabilities" 
+             class="result-image"
+             style="max-height: 600px; width: auto;">
+             
         <h2 class="subtitle has-text-justified teaser-caption">
           <strong>Figure 1: ROMA's streaming understanding capabilities.</strong> 
-          It supports proactive tasks, including event alerts and narration, alongside reactive question answering.
+          (From <code>task.pdf</code>) It supports proactive tasks, including event alerts and narration, alongside reactive question answering.
         </h2>
       </div>
     </div>
@@ -119,7 +125,7 @@
             To address this, we present <strong>ROMA</strong>, a real-time omni-multimodal assistant for unified reactive and proactive interaction. ROMA processes continuous inputs as synchronized multimodal units, aligning dense audio with discrete video frames to handle granularity mismatches. For online decision-making, we introduce a lightweight <strong>speak head</strong> that decouples response initiation from generation to ensure precise triggering without task conflict.
           </p>
           <p>
-            Extensive experiments across 12 benchmarks demonstrate ROMA achieves state-of-the-art performance on proactive tasks while remaining competitive in reactive settings, validating its robustness in unified real-time omni-multimodal understanding.
+            Extensive experiments across 12 benchmarks demonstrate ROMA achieves state-of-the-art performance on proactive tasks while remaining competitive in reactive settings.
           </p>
         </div>
       </div>
@@ -132,9 +138,6 @@
     <h2 class="title is-3 has-text-centered">Demo Video</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <p class="content">
-          Watch the real-time recording of our Gradio demo showcasing ROMA's capabilities.
-        </p>
         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -154,11 +157,14 @@
             ROMA unifies reactive answering and proactive timing over continuous inputs. The architecture utilizes chunked <strong>Time-aligned Multimodal ROPE (TMROPE)</strong> and a dedicated <strong>Speak Head</strong> for alignment and timing control.
           </p>
           <div class="has-text-centered" style="margin: 2rem 0;">
-            <img src="./static/images/architecture.png" alt="ROMA Architecture" style="width: 90%;">
+            <img src="./static/images/architecture.png" 
+                 alt="ROMA Architecture" 
+                 class="result-image" 
+                 style="width: 100%;">
+            <p class="teaser-caption has-text-centered"><strong>Figure 2: Model Architecture.</strong> (From <code>model.pdf</code>)</p>
           </div>
-          <p>
-            <strong>Key Innovations:</strong>
-          </p>
+          
+          <p><strong>Key Innovations:</strong></p>
           <ul>
             <li><strong>Multimodal Units:</strong> We segment continuous audio into one-second intervals synchronized with video frames.</li>
             <li><strong>Speak Head:</strong> A lightweight module parallel to the LM head that explicitly predicts response timing (binary decision).</li>
@@ -172,28 +178,36 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    <h2 class="title is-3 has-text-centered">Qualitative Results & Dataset</h2>
     
     <div class="columns is-centered">
-      <div class="column">
+      <div class="column is-full-width">
         <div class="content">
           <h3 class="title is-4">Real-Time Narration</h3>
           <p>
             Compared with baseline VideoLLMs, ROMA provides more succinct and time-aligned summaries of events without accessing future context.
           </p>
-          <img src="./static/images/narration.png" alt="Narration Results" style="width: 100%; border: 1px solid #ddd;">
+          <img src="./static/images/narration.png" 
+               alt="Narration Results" 
+               class="result-image" 
+               style="width: 100%;">
+          <p class="teaser-caption has-text-centered"><strong>Figure 9: Narration Case Study.</strong> (From <code>case_yc2.pdf</code>)</p>
         </div>
       </div>
     </div>
     
-    <div class="columns is-centered">
-      <div class="column">
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-full-width">
          <div class="content">
           <h3 class="title is-4">ROMA Streaming Dataset</h3>
           <p>
             We constructed a comprehensive streaming dataset covering Proactive (Alert, Narration) and Reactive (QA) tasks, totaling over 676K samples.
           </p>
-          <img src="./static/images/dataset.png" alt="Dataset Statistics" style="width: 100%; border: 1px solid #ddd;">
+          <img src="./static/images/dataset.png" 
+               alt="Dataset Statistics" 
+               class="result-image" 
+               style="width: 100%;">
+          <p class="teaser-caption has-text-centered"><strong>Figure 4: Dataset Overview.</strong> (From <code>dataset.pdf</code>)</p>
         </div>
       </div>
     </div>
