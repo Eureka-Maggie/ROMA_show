@@ -168,7 +168,7 @@
         <h2 class="title is-3 has-text-centered">Methodology</h2>
         <div class="content has-text-justified">
           <p>
-            ROMA unifies reactive answering and proactive timing over continuous inputs through a tailored streaming architecture. By integrating <strong>Chunked Time-aligned Multimodal ROPE (TMRoPE)</strong> with a dedicated <strong>Speak Head</strong>, the model achieves robust temporal alignment and autonomous interaction control.
+            ROMA unifies reactive answering and proactive timing over continuous inputs. The framework processes streaming signals as synchronized <strong>multimodal units</strong>, utilizing Chunked Time-aligned Multimodal ROPE (TMRoPE) for precise cross-modal alignment. By integrating a dedicated <strong>Speak Head</strong>, the model achieves robust temporal grounding and autonomous interaction control.
           </p>
 
           <div class="has-text-centered" style="margin: 2rem 0;">
@@ -183,11 +183,11 @@
           <ul>
             <li>
               <strong>Aligned Multimodal Units & TMRoPE:</strong> 
-              [cite_start]We segment continuous streams into fixed one-second intervals[cite: 310]. [cite_start]Within each unit, dense audio signals and discrete video frames are synchronized via Chunked TMRoPE [cite: 391][cite_start], which assigns cumulative positional IDs to maintain strict cross-modal correspondence along the global timeline[cite: 392].
+              We segment continuous streams into fixed one-second intervals. Within each unit, dense audio signals and discrete video frames are synchronized via Chunked TMRoPE, which assigns cumulative positional IDs to maintain strict cross-modal correspondence along the global timeline.
             </li>
             <li>
               <strong>Decoupled Speak Head:</strong> 
-              [cite_start]To enable proactive monitoring, we introduce a lightweight MLP module parallel to the LM head[cite: 302, 393]. [cite_start]This head explicitly predicts binary response probabilities based on the stream prefix [cite: 395][cite_start], decoupling the decision of <em>"when to speak"</em> from <em>"what to generate"</em> to mitigate interference from generative biases[cite: 397].
+              To enable proactive monitoring, we introduce a lightweight MLP module parallel to the LM head. This head explicitly predicts binary response probabilities based on the stream prefix, decoupling the decision of <em>"when to speak"</em> from <em>"what to generate"</em> to mitigate interference from generative biases.
             </li>
           </ul>
         </div>
