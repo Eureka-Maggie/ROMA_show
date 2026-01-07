@@ -101,11 +101,11 @@
         <img src="./static/teaser.png" 
              alt="ROMA Streaming Capabilities" 
              class="result-image"
-             style="max-height: 600px; width: auto;">
+             style="max-height: 450px; width: auto;">
              
         <h2 class="subtitle has-text-justified teaser-caption">
           <strong>Figure 1: ROMA's streaming understanding capabilities.</strong> 
-          (From <code>task.pdf</code>) It supports proactive tasks, including event alerts and narration, alongside reactive question answering.
+          It supports proactive tasks, including event alerts and narration, alongside reactive question answering.
         </h2>
       </div>
     </div>
@@ -117,17 +117,17 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified abstract-text">
-          <p>
-            Recent Omni-multimodal Large Language Models show promise in unified audio, vision, and text modeling. However, streaming audio-video understanding remains challenging, as existing approaches suffer from disjointed capabilities: they typically exhibit incomplete modality support or lack autonomous proactive monitoring.
-          </p>
-          <p>
-            To address this, we present <strong>ROMA</strong>, a real-time omni-multimodal assistant for unified reactive and proactive interaction. ROMA processes continuous inputs as synchronized multimodal units, aligning dense audio with discrete video frames to handle granularity mismatches. For online decision-making, we introduce a lightweight <strong>speak head</strong> that decouples response initiation from generation to ensure precise triggering without task conflict.
-          </p>
-          <p>
-            Extensive experiments across 12 benchmarks demonstrate ROMA achieves state-of-the-art performance on proactive tasks while remaining competitive in reactive settings.
-          </p>
-        </div>
+          <div class="content has-text-justified abstract-text">
+            <p>
+              Recent Omni-multimodal Large Language Models show promise in unified audio, vision, and text modeling. However, streaming audio-video understanding remains challenging, as existing approaches suffer from disjointed capabilities: they typically exhibit incomplete modality support or lack autonomous proactive monitoring.
+            </p>
+            <p>
+              To address this, we present ROMA, <strong>a real-time omni-multimodal assistant for unified reactive and proactive interaction.</strong> ROMA processes continuous inputs as synchronized <em>multimodal units</em>, aligning dense audio with discrete video frames to handle granularity mismatches. For online decision-making, we introduce a lightweight <em>speak head</em> that decouples response initiation from generation to ensure precise triggering without task conflict.
+            </p>
+            <p>
+              We train ROMA with a curated streaming dataset and a two-stage curriculum that progressively optimizes for streaming format adaptation and proactive responsiveness. To standardize the fragmented evaluation landscape, we reorganize diverse benchmarks into a unified suite covering both proactive (alert, narration) and reactive (QA) settings. Extensive experiments across 12 benchmarks demonstrate ROMA achieves state-of-the-art performance on proactive tasks while competitive in reactive settings, validating its robustness in unified real-time omni-multimodal understanding.
+            </p>
+          </div>
       </div>
     </div>
   </div>
@@ -191,7 +191,7 @@
                alt="Narration Results" 
                class="result-image" 
                style="width: 100%;">
-          <p class="teaser-caption has-text-centered"><strong>Figure 9: Narration Case Study.</strong> (From <code>case_yc2.pdf</code>)</p>
+          <p class="teaser-caption has-text-centered"><strong>Figure 9: Narration Case Study.</strong></p>
         </div>
       </div>
     </div>
@@ -207,7 +207,7 @@
                alt="Dataset Statistics" 
                class="result-image" 
                style="width: 100%;">
-          <p class="teaser-caption has-text-centered"><strong>Figure 4: Dataset Overview.</strong> (From <code>dataset.pdf</code>)</p>
+          <p class="teaser-caption has-text-centered"><strong>Figure 4: Dataset Overview.</strong></p>
         </div>
       </div>
     </div>
