@@ -168,21 +168,27 @@
         <h2 class="title is-3 has-text-centered">Methodology</h2>
         <div class="content has-text-justified">
           <p>
-            ROMA unifies reactive answering and proactive timing over continuous inputs. The architecture utilizes chunked <strong>Time-aligned Multimodal ROPE (TMROPE)</strong> and a dedicated <strong>Speak Head</strong> for alignment and timing control.
+            ROMA unifies reactive answering and proactive timing over continuous inputs through a tailored streaming architecture. By integrating <strong>Chunked Time-aligned Multimodal ROPE (TMRoPE)</strong> with a dedicated <strong>Speak Head</strong>, the model achieves robust temporal alignment and autonomous interaction control.
           </p>
+
           <div class="has-text-centered" style="margin: 2rem 0;">
             <img src="./static/architecture.png" 
                  alt="ROMA Architecture" 
                  class="result-image" 
                  style="width: 100%;">
-            <p class="teaser-caption has-text-centered"><strong>Figure 2: Model Architecture.</strong></p>
+            <p class="teaser-caption has-text-centered"><strong>Figure 2: Model Architecture.</strong> ROMA processes streaming inputs as aligned multimodal units. The speak head determines response timing, activating the LM head upon crossing a probability threshold.</p>
           </div>
           
-          <p><strong>Key Innovations:</strong></p>
+          <p><strong>Key Mechanisms:</strong></p>
           <ul>
-            <li><strong>Multimodal Units:</strong> We segment continuous audio into one-second intervals synchronized with video frames.</li>
-            <li><strong>Speak Head:</strong> A lightweight module parallel to the LM head that explicitly predicts response timing (binary decision).</li>
-            <li><strong>Two-Stage Training:</strong> A curriculum that first adapts the model to streaming formats and then optimizes for proactive responsiveness.</li>
+            <li>
+              <strong>Aligned Multimodal Units & TMRoPE:</strong> 
+              [cite_start]We segment continuous streams into fixed one-second intervals[cite: 310]. [cite_start]Within each unit, dense audio signals and discrete video frames are synchronized via Chunked TMRoPE [cite: 391][cite_start], which assigns cumulative positional IDs to maintain strict cross-modal correspondence along the global timeline[cite: 392].
+            </li>
+            <li>
+              <strong>Decoupled Speak Head:</strong> 
+              [cite_start]To enable proactive monitoring, we introduce a lightweight MLP module parallel to the LM head[cite: 302, 393]. [cite_start]This head explicitly predicts binary response probabilities based on the stream prefix [cite: 395][cite_start], decoupling the decision of <em>"when to speak"</em> from <em>"what to generate"</em> to mitigate interference from generative biases[cite: 397].
+            </li>
           </ul>
         </div>
       </div>
