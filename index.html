@@ -43,11 +43,25 @@
       height: 100%;
     }
 
-    /* 图片通用样式：圆角+阴影 */
+    /* 图片通用样式 */
     .result-image {
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin-bottom: 10px;
+    }
+    
+    /* 分隔线 */
+    hr {
+      margin: 3rem 0;
+      background-color: #f1f1f1;
+    }
+    
+    /* 表格标题 */
+    .table-caption {
+      font-size: 0.95rem; 
+      color: #4a4a4a; 
+      margin-top: 5px; 
+      margin-bottom: 25px;
     }
   </style>
 </head>
@@ -178,29 +192,11 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Qualitative Results & Dataset</h2>
-    
+    <h2 class="title is-3 has-text-centered">ROMA Streaming Dataset</h2>
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <div class="content">
-          <h3 class="title is-4">Real-Time Narration</h3>
-          <p>
-            Compared with baseline VideoLLMs, ROMA provides more succinct and time-aligned summaries of events without accessing future context.
-          </p>
-          <img src="./static/narration.png" 
-               alt="Narration Results" 
-               class="result-image" 
-               style="width: 100%;">
-          <p class="teaser-caption has-text-centered"><strong>Figure 9: Narration Case Study.</strong></p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="columns is-centered" style="margin-top: 2rem;">
-      <div class="column is-full-width">
-         <div class="content">
-          <h3 class="title is-4">ROMA Streaming Dataset</h3>
-          <p>
+         <div class="content has-text-centered">
+          <p class="has-text-justified">
             We constructed a comprehensive streaming dataset covering Proactive (Alert, Narration) and Reactive (QA) tasks, totaling over 676K samples.
           </p>
           <img src="./static/dataset.png" 
@@ -209,6 +205,101 @@
                style="width: 100%;">
           <p class="teaser-caption has-text-centered"><strong>Figure 4: Dataset Overview.</strong></p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Analysis</h2>
+    
+    <div class="content">
+      <h3 class="title is-4">Proactive Interaction: Event Alerts</h3>
+      <p>ROMA can accurately detect transient events and recurrences in real-time streams.</p>
+      
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <img src="./static/case_proactive.png" alt="Single Alert Case" class="result-image" style="width: 100%;">
+          <p class="teaser-caption has-text-centered"><strong>Figure: Single Alert Case.</strong> ROMA triggers precise alerts for one-time events.</p>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <img src="./static/case_proactive_multi.png" alt="Multi Alert Case" class="result-image" style="width: 100%;">
+          <p class="teaser-caption has-text-centered"><strong>Figure: Recurring Alert Case.</strong> ROMA handles recurring events effectively.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h3 class="title is-4">Proactive Interaction: Real-Time Narration</h3>
+      <p>Compared with baseline VideoLLMs, ROMA provides succinct and time-aligned summaries of events without accessing future context.</p>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <img src="./static/case_narration.png" alt="Narration Case Study" class="result-image" style="width: 100%;">
+          <p class="teaser-caption has-text-centered"><strong>Figure: Narration Case Study.</strong> Comparison on YouCook2.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h3 class="title is-4">Reactive Interaction: Question Answering</h3>
+      <p>In standard QA settings, ROMA maintains strong context understanding capabilities.</p>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <img src="./static/case_turn.png" alt="Reactive QA Case" class="result-image" style="width: 100%;">
+          <p class="teaser-caption has-text-centered"><strong>Figure: Reactive QA Case.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+
+    <h3 class="title is-4 results-subtitle">Proactive Tasks: Event-Driven Alert</h3>
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+        <img src="./static/alert1.png" alt="Alert Table 1" class="result-image" style="width: 100%;">
+        <p class="table-caption"><strong>Table: Performance on QVHighlights & Charades-STA.</strong></p>
+      </div>
+      <div class="column is-half has-text-centered">
+        <img src="./static/alert2.png" alt="Alert Table 2" class="result-image" style="width: 100%;">
+        <p class="table-caption"><strong>Table: Single & Recurring Alert Performance.</strong></p>
+      </div>
+    </div>
+
+    <h3 class="title is-4 results-subtitle">Proactive Tasks: Real-Time Narration</h3>
+    <div class="columns is-centered">
+      <div class="column is-10 has-text-centered">
+        <img src="./static/narration.png" alt="Narration Table" class="result-image" style="width: 100%;">
+        <p class="table-caption"><strong>Table: Streaming Narration on YouCook2 & OVO-Bench (SSR).</strong></p>
+      </div>
+    </div>
+
+    <h3 class="title is-4 results-subtitle">Reactive Tasks: QA & Streaming Understanding</h3>
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <img src="./static/ovo.jpg" alt="OVO Bench Table" class="result-image" style="width: 100%;">
+        <p class="table-caption"><strong>Table: Reactive QA on OVO-Bench (Real-time Visual Perception & Backward Tracing).</strong></p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <img src="./static/streaming.jpg" alt="Streaming Bench Table" class="result-image" style="width: 100%;">
+        <p class="table-caption"><strong>Table: Performance on StreamingBench.</strong></p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-two-thirds has-text-centered">
+        <img src="./static/omni.png" alt="Omni Bench Table" class="result-image" style="width: 100%;">
+        <p class="table-caption"><strong>Table: Full-Modality QA on Video-MME & EgoSchema.</strong></p>
       </div>
     </div>
 
